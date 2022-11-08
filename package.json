@@ -1,6 +1,6 @@
 {
   "homepage": "https://germangab1781.github.io/movieAPI",
-  "name": "peliculasapi",
+  "name": "moviedbapi",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
