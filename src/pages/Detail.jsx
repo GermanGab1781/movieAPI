@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 const Detail = () => {
   const params = useParams()
@@ -17,18 +17,19 @@ const Detail = () => {
   },[params,setMovie])
 
   return (
-    <div className='bg-red-200'>
+    <div className='bg-red-200 pb-32'>
       <>
         {movie === undefined && <div>CARGANDO</div>}
         {(movie && movie.length === 0) && <div>NO HAY NADA</div>}
       </>
       {movie &&
-        <div className='flex flex-col place-items-center m-auto bg-red-300 w-1/2 gap-y-5'>
-          <span className='text-6xl text-center'>{movie.title}</span>      
+        <div className='flex flex-col relative place-items-center m-auto bg-red-300 w-1/2 gap-y-5 text-center'>          
+          <span className='text-6xl text-center w-3/4'>{movie.title}</span>
+          <NavLink to='/' className='absolute left-0 p-3 font-bold text-3xl'>{"<--"}</NavLink>
           <div className='grid place-content-start gap-x-10'>
             <img className='col-start-1 h-96 w-60 m-auto' alt={movie.title} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
             
-            <div className='col-start-2 flex flex-col m-auto'>
+            <div className='col-start-2 flex flex-col w-4/5 m-auto'>
               <>{/* calification color */}
                 {movie.vote_average >= 6 && 
                 <div className='bg-green-500 h-24 w-24 relative'>
@@ -71,7 +72,7 @@ const Detail = () => {
               </span>            
             </div>
           </div>
-          <div className='flex flex-col w-3/4 m-auto'>
+          <div className='flex flex-col w-4/5 m-auto'>
             <span className='text-center font-bold text-3xl'>Overview</span>
             <span className='border border-red-200'>{movie.overview}</span>
           </div>
