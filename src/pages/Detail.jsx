@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Detail = () => {
   const params = useParams()
   const [movie, setMovie] = useState(undefined);
   useEffect(()=>{
+    window.scrollTo(0, 0);
     const keyword = params.id
     axios.get(`https://api.themoviedb.org/3/movie/${keyword}?api_key=1ce52f5f95a2acce305a563bd35c19ec&language=en-US`)
       .then((res)=>{
@@ -19,11 +21,11 @@ const Detail = () => {
   return (
     <div className='bg-red-200 pb-32'>
       <>
-        {movie === undefined && <div>CARGANDO</div>}
-        {(movie && movie.length === 0) && <div>NO HAY NADA</div>}
+        {movie === undefined && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-red-300 w-screen h-screen'><span className='text-3xl m-auto'>LOADING</span></motion.div>}
+        {(movie && movie.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-red-300 w-screen h-screen'><span className='text-3xl m-auto'>Nothing found</span></motion.div>}
       </>
       {movie &&
-        <div className='flex flex-col relative place-items-center m-auto pt-16 bg-red-300 w-1/2 gap-y-5 text-center'>          
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-col relative place-items-center m-auto pt-16 bg-red-300 w-1/2 gap-y-5 text-center'>          
           <span className='text-6xl text-center w-3/4'>{movie.title}</span>
           <NavLink to='/' className='absolute left-0 p-3 font-bold text-3xl'>{"<--"}</NavLink>
           <div className='grid place-content-start gap-x-10'>
@@ -76,7 +78,7 @@ const Detail = () => {
             <span className='text-center font-bold text-3xl'>Overview</span>
             <span className='border border-red-200'>{movie.overview}</span>
           </div>
-        </div>      
+        </motion.div>      
       }
     </div>
   );
