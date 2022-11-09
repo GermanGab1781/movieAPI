@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
@@ -15,6 +16,7 @@ function App() {
           <Route path="/Movie/:id" element={<Detail/>}/>
           <Route path="/Search/:id/:page" element={<Search/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -21,8 +21,9 @@ export default function Home() {
     <div className=''>
       {moviesList &&
         
-        <div className='text-center'>
-          <span>TOP 20 MOST POPULAR</span>
+        <div className='text-center flex flex-col pt-16'>
+          <span className='text-6xl font-bold border border-red-500 m-3 p-5 bg-red-400'>Welcome to the best Movies Page</span>
+          <span className='text-3xl font-semibold border border-green-600 mx-5 mt-10'>TOP 20 MOST POPULAR</span>
           {console.log(moviesList)}
           <div className='flex flex-wrap place-content-center gap-5 p-5 m-5 bg-green-900 border border-red-600'>
           {moviesList.map((movie,index)=>{

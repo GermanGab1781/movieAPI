@@ -23,7 +23,7 @@ const Detail = () => {
         {(movie && movie.length === 0) && <div>NO HAY NADA</div>}
       </>
       {movie &&
-        <div className='flex flex-col relative place-items-center m-auto bg-red-300 w-1/2 gap-y-5 text-center'>          
+        <div className='flex flex-col relative place-items-center m-auto pt-16 bg-red-300 w-1/2 gap-y-5 text-center'>          
           <span className='text-6xl text-center w-3/4'>{movie.title}</span>
           <NavLink to='/' className='absolute left-0 p-3 font-bold text-3xl'>{"<--"}</NavLink>
           <div className='grid place-content-start gap-x-10'>

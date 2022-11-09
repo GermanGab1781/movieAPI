@@ -32,7 +32,7 @@ const Search = () => {
       </>
       {movies && 
         <div>
-          <div className='flex flex-col place-items-center'>
+          <div className='flex flex-col pt-16 place-items-center'>
             <span>Search for : "{params.id}"</span>
             <span>{movies.total_results} results and {movies.total_pages} pages</span>
             <div className='flex flex-row flex-wrap'>
