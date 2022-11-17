@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className='pt-10 pb-16 bg-red-800 flex flex-col text-center gap-y-5 text-2xl font-semibold'>
+    <div className='pt-10 pb-16 bg-slate-900 flex flex-col text-center gap-y-5 text-2xl font-semibold'>
       <div className=''>
         <span>Made with the API of </span>
         <a className='border-2 border-blue-800 rounded-md' href='https://www.themoviedb.org'  target="_blank" rel="noreferrer">The Movie Db</a>

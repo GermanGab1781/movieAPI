@@ -26,22 +26,28 @@ const Search = () => {
         setCurrentPage(res.data.page)
         setNextPage("/Search/"+query+"/"+(res.data.page+1))
         setPreviousPage("/Search/"+query+"/"+(res.data.page-1))
+        console.log(res.data)
       })
   },[params])
   return (
     <div>
       <>
       {movies === undefined && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='h-screen w-screen'>Loading</motion.div>}
-      {(movies && movies.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='h-screen w-screen'>NO SEARCH RESULTS PLEASE SEARCH ANOTHER MOVIE</motion.div>}
+      {(movies && movies.total_results === 0) && 
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='h-screen text-center text-black'>
+          <span className='absolute left-1/2 top-1/3 transform -translate-x-1/2 text-3xl'>
+          NO SEARCH RESULTS PLEASE SEARCH ANOTHER MOVIE
+          </span>
+        </motion.div>}
       </>
-      {movies && 
+      {(movies && movies.total_results > 0) &&
         <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
           <div className='flex flex-col pt-16 place-items-center'>
             <span>Search for : "{params.id}"</span>
             <span>{movies.total_results} results and {movies.total_pages} pages</span>
             <Pagination query={params.id} pagesNumber={pagesNumber} currentPage={currentPage} nextPage={nextPage} previousPage={previousPage} />
           </div>
-          <div className='flex flex-wrap place-content-center gap-5 p-5 m-5 bg-green-900 border border-red-600 text-center'>
+          <div className='flex flex-wrap place-content-center gap-5 p-5 m-5 bg-slate-900 rounded-md text-center'>
             {movies.results.map((movie,index)=>{
               let detailPath = "/Movie/"+movie.id
               return(

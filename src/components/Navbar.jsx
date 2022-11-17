@@ -16,7 +16,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed w-screen z-50 flex flex-row p-4 bg-red-900 place-content-between'>
+    <div className='fixed w-screen z-50 flex flex-row p-4 bg-slate-900 place-content-between font-Oswald'>
       <NavLink to='/' className='font-bold text-xl'>THE MOVIES API</NavLink>
       <form onSubmit={submitSearch} className='absolute -translate-x-1/2 left-1/2'>
         <input name='query' type='text'/>

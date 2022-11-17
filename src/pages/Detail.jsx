@@ -27,20 +27,20 @@ const Detail = () => {
   },[params,setMovie,setSimilarMovies])
 
   return (
-    <div className='bg-red-200 pb-32'>
+    <div className=' pb-32'>
       <>
-        {(movie === undefined || similarMovies === undefined) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-red-300 w-screen h-screen'><span className='text-3xl m-auto'>LOADING</span></motion.div>}
-        {(movie && movie.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-red-300 w-screen h-screen'><span className='text-3xl m-auto'>Nothing found</span></motion.div>}
+        {(movie === undefined || similarMovies === undefined) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-slate-900 w-screen h-screen'><span className='text-3xl m-auto'>LOADING</span></motion.div>}
+        {(movie && movie.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-slate-900 w-screen h-screen'><span className='text-3xl m-auto'>Nothing found</span></motion.div>}
       </>
       {(movie  && similarMovies) &&
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-col relative place-items-center m-auto pt-16 bg-red-300 w-1/2 gap-y-5 text-center'>  
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-col relative place-items-center m-auto pt-16 bg-slate-900 w-1/2 gap-y-5 text-center'>  
           {/* Title and Home Button */}        
-          <span className='text-6xl text-center w-3/4'>{movie.title}</span>
-          <NavLink to='/' className='absolute left-0 py-3 font-bold text-3xl border border-opacity-10 border-black rounded-xl mx-2'>{"<--"}<br/><span className='text-xl'>Home</span></NavLink>
+          <span className='text-6xl text-center text-yellow-400 w-3/4'>{movie.title}</span>
+          <NavLink to='/' className='absolute left-0 py-3 font-bold text-3xl mx-2'>{"<--"}<br/><span className='text-xl'>Home</span></NavLink>
           {/* Movie Details */}
           <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-row gap-x-3 justify-between mt-5'>
             <img className='h-96 w-60' alt={movie.title} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>            
-            <div className='flex flex-col w-full h-full text-xl font-semibold'>
+            <div className='flex flex-col gap-y-3 w-full h-full text-xl font-semibold'>
               {/* Calification */}
               <>
                 {movie.vote_average >= 6 && 
