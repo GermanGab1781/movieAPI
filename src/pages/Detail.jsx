@@ -33,28 +33,28 @@ const Detail = () => {
         {(movie && movie.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-slate-900 w-screen h-screen'><span className='text-3xl m-auto'>Nothing found</span></motion.div>}
       </>
       {(movie  && similarMovies) &&
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-col relative place-items-center m-auto pt-16 bg-slate-900 w-1/2 gap-y-5 text-center'>  
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-col relative place-items-center m-auto xl:pt-16 pt-24 px-2 bg-slate-900 xl:w-1/2 w-3/4 gap-y-5 text-center'>  
           {/* Title and Home Button */}        
-          <span className='text-6xl text-center text-yellow-400 w-3/4'>{movie.title}</span>
-          <NavLink to='/' className='absolute left-0 py-3 font-bold text-3xl mx-2'>{"<--"}<br/><span className='text-xl'>Home</span></NavLink>
+          <span className='xl:text-6xl text-4xl text-center text-yellow-400 w-3/4'>{movie.title}</span>
+          <NavLink to='/' className='absolute -left-10 bg-slate-900 py-3 font-bold text-3xl mx-2 text-yellow-400 rounded-md'>{"<--"}<br/><span className='text-xl'>Home</span></NavLink>
           {/* Movie Details */}
-          <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-row gap-x-3 justify-between mt-5'>
+          <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex xl:flex-row flex-col gap-x-3 place-items-center justify-between mt-5'>
             <img className='h-96 w-60' alt={movie.title} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>            
             <div className='flex flex-col gap-y-3 w-full h-full text-xl font-semibold'>
               {/* Calification */}
               <>
                 {movie.vote_average >= 6 && 
-                <div className='bg-green-500 h-24 w-24 relative'>
+                <div className='bg-green-500 h-24 m-auto xl:m-0 w-24 relative'>
                   <span className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl text-white font-bold'>{movie.vote_average}</span>
                   <span className='absolute bottom-1 left-1/2 transform -translate-x-1/2 text-sm text-stone-300 font-bold'>Votes:{movie.vote_count}</span>
                 </div>}
                 {(movie.vote_average < 6 && movie.vote_average > 4) &&
-                <div className='bg-yellow-500 h-24 w-24 relative'>
+                <div className='bg-yellow-500 h-24 m-auto xl:m-0 w-24 relative'>
                   <span className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl text-white font-bold'>{movie.vote_average}</span>
                   <span className='absolute bottom-1 left-1/2 transform -translate-x-1/2 text-sm text-stone-300 font-bold'>Votes:{movie.vote_count}</span>
                 </div>}
                 {movie.vote_average < 4 && 
-                <div className='bg-red-500 h-24 w-24 relative'>
+                <div className='bg-red-500 h-24 m-auto xl:m-0 w-24 relative'>
                   <span className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl text-white font-bold'>{movie.vote_average}</span>
                   <span className='absolute bottom-1 left-1/2 transform -translate-x-1/2 text-sm text-stone-300 font-bold'>Votes:{movie.vote_count}</span>
                 </div>}

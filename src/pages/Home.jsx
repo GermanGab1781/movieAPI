@@ -29,7 +29,7 @@ export default function Home() {
       {moviesList &&
         
         <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}  className='text-center flex flex-col pt-16'>
-          <span className='text-6xl m-3 p-5 bg-slate-700 rounded-md'>Welcome to the best Movies Page</span>
+          <span className='xl:text-6xl text-4xl m-3 p-5 bg-slate-700 rounded-md'>Welcome to the best Movies Page</span>
           <span className='text-3xl font-semibold mx-5 mt-10 border-t border-b py-3 text-slate-900'>20 MOST POPULAR</span>
           {console.log(moviesList)}
           <div className='flex flex-wrap place-content-center gap-5 p-5 m-5 bg-slate-900 rounded-md'>

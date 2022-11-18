@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="bg-slate-400 text-slate-400">
+    <div className="bg-slate-400 text-slate-400 font-Oswald">
       <BrowserRouter>
         <Navbar/>
         <AnimatedRoutes/>

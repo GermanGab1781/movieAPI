@@ -27,6 +27,7 @@ const Pagination = ({query,currentPage,pagesNumber,nextPage,previousPage}) => {
             return (<NavLink to={pathPage} key={index} className='w-6 h-fit p-1 m-2 bg-blue-900 text-center'>{index+1}</NavLink>);    
           }                                                    
         }
+        return(<></>)
         }
       )}
       {(currentPage === pagesNumber) && <span className='w-6 h-fit font-bold p-1 m-2 bg-slate-300 text-center pointer-events-none'>{">"}</span>}
