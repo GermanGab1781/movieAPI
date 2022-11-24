@@ -54,7 +54,7 @@ const Search = () => {
                 <NavLink to={detailPath}  className='flex flex-col cursor-pointer relative group h-fit w-fit border border-blue-700' key={index}>
                   <span className='font-bold group-hover:scale-110 group-hover:text-white m-auto h-fit w-60 transition-all ease-in-out delay-75'>{movie.title}</span>
                   <img className='h-60 w-60' alt={movie.title} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
-                  <span className='absolute bottom-0 font-bold h-60 w-60 group-hover:bg-white group-hover:bg-opacity-70 group-hover:opacity-100 opacity-0 overflow-hidden transition-all ease-in-out delay-75'>{movie.overview}</span>    
+                  <span className='absolute bottom-0 font-bold h-60 w-60 group-hover:bg-white group-hover:bg-opacity-90 group-hover:opacity-100 text-black opacity-0 overflow-hidden transition-all ease-in-out delay-75'>{movie.overview}</span>    
                   <Calification vote={movie.vote_average}/>
                 </NavLink>
               )

@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className=''>
       <>
-        {moviesList === undefined && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-green-300 w-screen h-screen'><span className='text-3xl m-auto'>LOADING</span></motion.div>}
-        {(moviesList && moviesList.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-green-300 w-screen h-screen'><span className='text-3xl m-auto'>Nothing found</span></motion.div>}
+        {moviesList === undefined && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-slate-400 w-screen h-screen'><span className='text-3xl m-auto'>LOADING</span></motion.div>}
+        {(moviesList && moviesList.length === 0) && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='bg-slate-400 w-screen h-screen'><span className='text-3xl m-auto'>Nothing found</span></motion.div>}
       </>
       {moviesList &&
         
@@ -39,7 +39,7 @@ export default function Home() {
               <NavLink to={detailPath}  className='flex flex-col cursor-pointer relative group h-fit w-fit border border-blue-700' key={index}>
                 <span className='font-bold group-hover:scale-110 group-hover:text-white m-auto h-fit w-60 transition-all ease-in-out delay-75'>{movie.title}</span>
                 <img className='h-60 w-60' alt={movie.title} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
-                <span className='absolute bottom-0 font-bold h-60 w-60 group-hover:bg-white group-hover:text-slate-900 group-hover:bg-opacity-70 group-hover:opacity-100 opacity-0 overflow-hidden transition-all ease-in-out delay-75'>{movie.overview}</span>                   
+                <span className='absolute bottom-0 font-bold h-60 w-60 group-hover:bg-white group-hover:text-slate-900 group-hover:bg-opacity-90 group-hover:opacity-100 opacity-0 overflow-hidden transition-all ease-in-out delay-75'>{movie.overview}</span>                   
                 <Calification vote={movie.vote_average}/>
               </NavLink>
             )
