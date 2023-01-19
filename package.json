@@ -1,5 +1,5 @@
 {
-  "homepage": "https://germangab1781.github.io/movieAPI",
+  "homepage": ".",
   "name": "moviedbapi",
   "version": "0.1.0",
   "private": true,
@@ -43,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "tailwindcss": "^3.2.1"
   }
 }
